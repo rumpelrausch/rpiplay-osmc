@@ -35,17 +35,23 @@ the files is from a shell at the device.
 You could use wget or curl to download files.
 
 1. Download the script `install_libs.sh`  
-   and sudo run it:  
+   - e.g. with wget:  
+   `wget https://raw.githubusercontent.com/rumpelrausch/rpiplay-bin/master/install_libs.sh`  
+   - sudo run it:  
    `sudo sh ./install_libs`
 
 1. Download the precompiled binary `rpiplay` from the latest release  
    https://github.com/rumpelrausch/rpiplay-bin/releases  
-   Modify it to your liking (change the `NAME` variable).  
-   Move it to `/etc/systemd/system`.
+   - Modify it to your liking (change the `NAME` variable).  
+   - Sudo copy it:  
+   `sudo cp rpiplay.service /etc/systemd/system/`
 
 2. Download the systemd service file.  
-   Sudo move it to /usr/local/bin.  
-   Apply read/execute rights:  
+   - e.g. with wget:  
+   `wget https://raw.githubusercontent.com/rumpelrausch/rpiplay-bin/master/rpiplay.service`  
+   - Sudo move it to /usr/local/bin.  
+   `sudo mv rpiplay /usr/local/bin`
+   - Apply read/execute rights:  
    `sudo chmod a+rx /usr/local/bin/rpiplay`
 
 3. Enable and start the systemd service:  
