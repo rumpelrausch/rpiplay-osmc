@@ -1,0 +1,12 @@
+[Unit]
+Description=AirPlay mirroring service
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+Environment=NAME="My OSMC installation"
+ExecStart=/usr/local/bin/rpiplay -n ${NAME} -b auto -a hdmi -vr rpi -ar rpi -l
+
+[Install]
+WantedBy=multi-user.target
